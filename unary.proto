@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package unary;
+
+service Unary{
+  // A simple RPC.
+  //
+  // Obtains the MessageResponse at a given position.
+ rpc GetServerResponse(Message) returns (MessageResponse) {}
+
+}
+
+message Message{
+ string message = 1;
+ string client_id= 2;
+ string timestamp=3;
+}
+
+message MessageResponse{
+ string message = 1;
+ bool received = 2;
+ string timestamp=3;
+}
